@@ -33,7 +33,7 @@ namespace xadrez_console.tabuleiro.xadrez
                 {
                     break;
                 }
-                pos.linha--;
+                pos.linha = pos.linha -1;
             }
 
             //abaixo
@@ -45,7 +45,7 @@ namespace xadrez_console.tabuleiro.xadrez
                 {
                     break;
                 }
-                pos.linha++;
+                pos.linha = pos.linha +1;
             }
 
             //direita
@@ -57,7 +57,7 @@ namespace xadrez_console.tabuleiro.xadrez
                 {
                     break;
                 }
-                pos.linha++;
+                pos.coluna = pos.coluna +1;
             }
 
             //esquerda
@@ -69,7 +69,7 @@ namespace xadrez_console.tabuleiro.xadrez
                 {
                     break;
                 }
-                pos.linha--;
+                pos.coluna = pos.coluna -1;
             }
             return mat;
         }
