@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using tabuleiro;
-
-namespace xadrez_console.tabuleiro
+﻿namespace tabuleiro
 {
     abstract class Peca
     {
+
         public Posicao posicao { get; set; }
         public Cor cor { get; protected set; }
         public int qteMovimentos { get; protected set; }
@@ -17,14 +11,16 @@ namespace xadrez_console.tabuleiro
         public Peca(Tabuleiro tab, Cor cor)
         {
             this.posicao = null;
+            this.tab = tab;
             this.cor = cor;
             this.qteMovimentos = 0;
-            this.tab = tab;
         }
+
         public void incrementarQteMovimentos()
         {
             qteMovimentos++;
         }
+
         public void decrementarQteMovimentos()
         {
             qteMovimentos--;
@@ -46,9 +42,11 @@ namespace xadrez_console.tabuleiro
             return false;
         }
 
-        public bool movimentoPossivel(Posicao pos) {
-            return movimentosPossiveis()[posicao.linha, posicao.coluna];
+        public bool movimentoPossivel(Posicao pos)
+        {
+            return movimentosPossiveis()[pos.linha, pos.coluna];
         }
+
         public abstract bool[,] movimentosPossiveis();
     }
 }

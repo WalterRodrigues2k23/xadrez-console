@@ -1,7 +1,8 @@
-﻿namespace xadrez_console.tabuleiro
+﻿namespace tabuleiro
 {
-     enum Cor
+    enum Cor
     {
+
         Branca,
         Preta,
         Amarela,

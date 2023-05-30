@@ -1,12 +1,15 @@
 ﻿using tabuleiro;
-using xadrez_console.tabuleiro;
 
 namespace xadrez
 {
-    class Cavalo :Peca
+
+    class Cavalo : Peca
     {
-        public Cavalo(Tabuleiro tab, Cor cor) : base(tab, cor) { 
+
+        public Cavalo(Tabuleiro tab, Cor cor) : base(tab, cor)
+        {
         }
+
         public override string ToString()
         {
             return "C";
@@ -15,7 +18,7 @@ namespace xadrez
         private bool podeMover(Posicao pos)
         {
             Peca p = tab.peca(pos);
-            return p != null || p.cor != cor;
+            return p == null || p.cor != cor;
         }
 
         public override bool[,] movimentosPossiveis()
@@ -64,6 +67,7 @@ namespace xadrez
             {
                 mat[pos.linha, pos.coluna] = true;
             }
+
             return mat;
         }
     }
